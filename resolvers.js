@@ -22,16 +22,6 @@ const resolver = {
                 return data.Items
             }).catch(err => null);
         },
-        getPost: (_, args) => {
-            return db.getTable("postsTable").getRecordById(args.id).then(data => {
-                return data.Item
-            }).catch(err => null);
-        },
-        getPosts: (_, args) => {
-            return  db.getTable("postsTable").getRecords({}).then(data => {
-                return data.Items
-            }).catch(err => null);
-        },
     },
     Mutation: {
         createTodo: (_, args) => {
@@ -70,26 +60,6 @@ const resolver = {
         },
         updateUser: (_, args) => {
             return db.getTable("usersTable")
-                .updateRecordById(args.id, args.input)
-                .then(data => data.Attributes)
-                .catch(err => null);
-        },
-        createPost: (_, args) => {
-            return db.getTable("postsTable")
-            .insertRecord(args.input)
-            .then(data => data)
-            .catch(err => {
-                throw err;
-            })
-        },
-        deletePost: (_, args) => {
-            return db.getTable("postsTable")
-                .deleteRecordById(args.id)
-                .then(data => true)
-                .catch(err => false);
-        },
-        updatePost: (_, args) => {
-            return db.getTable("postsTable")
                 .updateRecordById(args.id, args.input)
                 .then(data => data.Attributes)
                 .catch(err => null);

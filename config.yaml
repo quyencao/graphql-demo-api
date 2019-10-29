@@ -1,7 +1,6 @@
 tables:
   - todosTable
   - usersTable
-  - postsTable
 
 types:
   - name: Todo
@@ -26,13 +25,3 @@ types:
       - name: gender
         type: String
         required: false
-  
-  - name: Post
-    ref: postsTable
-    fields:
-      - name: title
-        type: String
-        required: true
-      - name: body
-        type: String
-        required: true
