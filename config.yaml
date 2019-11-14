@@ -1,19 +1,7 @@
 tables:
-  - todosTable
   - usersTable
-  - postsTable
 
 types:
-  - name: Todo
-    ref: todosTable
-    fields:
-      - name: text
-        type: String
-        required: true
-      - name: completed
-        type: Boolean
-        required: false
-
   - name: User
     ref: usersTable
     fields:
@@ -23,16 +11,4 @@ types:
       - name: email
         type: String
         required: true
-      - name: gender
-        type: String
-        required: false
 
-  - name: Post
-    ref: postsTable
-    fields:
-      - name: title
-        type: String
-        required: true
-      - name: body
-        type: String
-        required: true
